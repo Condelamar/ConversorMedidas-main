@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 class SalvaLog {
 
-  // porque sua classe SalvaLog armazena uma lista de Strings e não uma lista de objetos Conversão?
-  // seria mais interessante, agregaria mais inforações no seu log
-
   static List<String>? _valoresLog = [];
   static String? _logString = '';
 

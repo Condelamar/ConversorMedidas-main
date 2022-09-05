@@ -41,13 +41,8 @@ class Log extends StatelessWidget {
                     }
                     break;
                   case 1:
-                    // você está tentando invocar um m[etodo do seu modelo para limpar os logs
-                    // lembra modelos != controller. Quem deve gerenciar seu estado sempre deve ser um provider (controller)
-                    // podemos discutir mais sobre sua duvida na proxima aula
-                    print('aqui será');
                     Provider.of<SalvaLogController>(context, listen: false)
                         .limpaLog();
-                    // SalvaLog.limpaLog();
                     break;
                 }
                 _selectedIndex = index;
