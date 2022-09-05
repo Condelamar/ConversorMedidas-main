@@ -41,31 +41,30 @@ class Log extends StatelessWidget {
                     }
                     break;
                   case 1:
-                  SalvaLog.limpaLog();
+                    // você está tentando invocar um m[etodo do seu modelo para limpar os logs
+                    // lembra modelos != controller. Quem deve gerenciar seu estado sempre deve ser um provider (controller)
+                    // podemos discutir mais sobre sua duvida na proxima aula
+                    print('aqui será');
+                    Provider.of<SalvaLogController>(context, listen: false)
+                        .limpaLog();
+                    // SalvaLog.limpaLog();
                     break;
                 }
                 _selectedIndex = index;
               },
             ),
-            body: Consumer<SalvaLogController>(
-                builder: (context, log, child) {
+            body: Consumer<SalvaLogController>(builder: (context, log, child) {
               return SingleChildScrollView(
                 child: Column(
-                  children: <Widget>[
-                    Card(
-                        color: Color.fromARGB(255, 128, 127, 129),
-                        child: Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none, hintText: log.listaLog()),
-                            readOnly: true,
-                            maxLines: 45,
-                          ),
-                        )),
-                  ],
+                  children:
+                      log.getSalvaLog.valoresLog!.map((calculo) {
+                    return Card(
+                        child: Column(
+                      children: [Text(calculo.toString())],
+                    ));
+                  }).toList(),
                 ),
               );
-            })));    
+            })));
   }
 }

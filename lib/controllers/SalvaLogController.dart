@@ -25,8 +25,15 @@ class SalvaLogController extends ChangeNotifier {
     logString = logString! + _salvaLog.valoresLog![i] + '\n';
     }
     return logString;
+    
   }
 
   List<String>? get salvaLog => _salvaLog.valoresLog;
   String? get logString => _salvaLog.logString;
+
+  // seu provider precisa prover um mecanismo de expor a função de limpeza de log do seu modelo
+  void limpaLog(){    
+    _salvaLog.limpaLog();
+    notifyListeners();
+  }
 }
