@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color.fromARGB(255, 30, 6, 138),
+        primaryColor: Color.fromARGB(255, 85, 49, 248),
       ),
       home: Conversor(),
     );

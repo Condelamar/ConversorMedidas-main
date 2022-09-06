@@ -26,12 +26,12 @@ class ConversaoController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void set dropDownValue(String? newValue){
+  void set dropDownValue(String? newValue) {
     _conversao.dropDownValue = newValue;
     notifyListeners();
   }
 
-   void set dropDownValue2(String? newValue){
+  void set dropDownValue2(String? newValue) {
     _conversao.dropDownValue2 = newValue;
     notifyListeners();
   }
@@ -39,5 +39,5 @@ class ConversaoController extends ChangeNotifier {
   double? get valorConvertido => _conversao.valorConvertido;
   double? get valorPassado => _conversao.valorPassado;
   String? get dropDownValue => _conversao.dropDownValue;
-   String? get dropDownValue2 => _conversao.dropDownValue2;
+  String? get dropDownValue2 => _conversao.dropDownValue2;
 }

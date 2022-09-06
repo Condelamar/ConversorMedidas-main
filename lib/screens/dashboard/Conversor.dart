@@ -34,6 +34,8 @@ class Conversor extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => Log()));
+                  Provider.of<ConversaoController>(context, listen: false)
+                      .valorConvertido = 0;
                 },
               ),
             ),
@@ -138,23 +140,24 @@ class Conversor extends StatelessWidget {
                           onPressed: () {
                             if (dropdownValue2.contains('Quilômetros') &&
                                 dropdownValue.contains('Milhas')) {
-                              valorConversao = conversao.getConversao.converteMilhaKm();
+                              valorConversao =
+                                  conversao.getConversao.converteMilhaKm();
                               conversao.valorConvertido = valorConversao;
                               SalvaLog.setValoreslog(valorConversao.toString());
                             } else if (dropdownValue2.contains('Quilômetros') &&
                                 dropdownValue.contains('Jardas')) {
-                              valorConversao = conversao.getConversao.converteJardaKm();
-                              
+                              valorConversao =
+                                  conversao.getConversao.converteJardaKm();
                               conversao.valorConvertido = valorConversao;
                             } else if (dropdownValue2.contains('Centímetros') &&
                                 dropdownValue.contains('Milhas')) {
-                              valorConversao = conversao.getConversao.converteMilhaCm();
-                              
+                              valorConversao =
+                                  conversao.getConversao.converteMilhaCm();
                               conversao.valorConvertido = valorConversao;
                             } else if (dropdownValue2.contains('Centímetros') &&
                                 dropdownValue.contains('Jardas')) {
-                              valorConversao = conversao.getConversao.converteJardaCm();
-                              
+                              valorConversao =
+                                  conversao.getConversao.converteJardaCm();
                               conversao.valorConvertido = valorConversao;
                             }
                           },
@@ -162,7 +165,8 @@ class Conversor extends StatelessWidget {
                       ),
                       Text(
                         "Valor convertido: " +
-                             conversao.getConversao.valorConvertido.toString(),
+                            conversao.getConversao.valorConvertido!
+                                .toStringAsFixed(3),
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),

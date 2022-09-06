@@ -23,15 +23,17 @@ class Log extends StatelessWidget {
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home),
-                  label: 'Inicio',
+                  label: 'Início',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.playlist_remove),
+                  icon: Icon(Icons.playlist_remove_rounded),
                   label: 'Limpar Log',
                 ),
               ],
               currentIndex: 0,
-              selectedItemColor: Color.fromARGB(255, 85, 49, 248),
+              selectedItemColor: Color.fromARGB(255, 255, 255, 255),
+              unselectedItemColor: Color.fromARGB(255, 255, 255, 255),
+              backgroundColor: Color.fromARGB(255, 85, 49, 248),
               onTap: (int index) {
                 switch (index) {
                   case 0:
@@ -51,8 +53,7 @@ class Log extends StatelessWidget {
             body: Consumer<SalvaLogController>(builder: (context, log, child) {
               return SingleChildScrollView(
                 child: Column(
-                  children:
-                      log.getSalvaLog.valoresLog!.map((calculo) {
+                  children: log.getSalvaLog.valoresLog!.map((calculo) {
                     return Card(
                         child: Column(
                       children: [Text(calculo.toString())],
