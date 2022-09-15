@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hello_world/controllers/ConversaoController.dart';
 import 'package:hello_world/controllers/SalvaLogController.dart';
 import 'package:hello_world/screens/dashboard/Conversor.dart';
+import 'package:hello_world/screens/dashboard/SliderHome.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color.fromARGB(255, 85, 49, 248),
       ),
-      home: Conversor(),
+      home: SliderHome(),
     );
   }
 }
